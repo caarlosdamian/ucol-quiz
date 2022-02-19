@@ -1,8 +1,11 @@
 import fondo from "./assets/page-font.svg";
-import google from "./assets/google.svg";
 import "./App.css";
+import GoogleLogin from "react-google-login";
 
 function App() {
+  const responseGoogle = (respuesta) => {
+    console.log(respuesta);
+  };
   return (
     <div className="App">
       <div className="left">
@@ -34,7 +37,14 @@ function App() {
             <span className="login-line">or</span>
             <div className="line"> </div>
           </div> */}
-        <button className="login-google"><img className="google-img" src={google}alt='button'/><span className="span-google">Iniciar con Google</span></button>
+          <GoogleLogin
+           className="login-google"
+            // clientId="463595295jjjjjjjjj319-ug1hb92gokes851jf3qqh3gp5gocp45h.apps.googleusercontent.com"
+            buttonText="Iniciar con Google"
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+            cookiePolicy={"single_host_origin"}
+          />
         </form>
       </div>
     </div>
