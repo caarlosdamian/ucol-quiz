@@ -12,7 +12,7 @@ function App() {
         <form action="" className="login-headers">
           <h1 className="login-title">Iniciar sesion</h1>
           <span className="login-subtitle">correo universitario</span>
-          <label htmlFor="" className="login-label">
+          {/* <label htmlFor="" className="login-label">
             Email*
           </label>
           <input
@@ -33,7 +33,7 @@ function App() {
             <div className="line"> </div>
             <span className="login-line">or</span>
             <div className="line"> </div>
-          </div>
+          </div> */}
         <button className="login-google"><img className="google-img" src={google}alt='button'/><span className="span-google">Iniciar con Google</span></button>
         </form>
       </div>
