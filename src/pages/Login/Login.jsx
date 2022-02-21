@@ -1,20 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import fondo from "../../assets/page-font.svg";
 import GoogleLogin from "react-google-login";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { SIGN_IN } from "../../redux/userSlice/userSlice";
 
-export const Login = ({setUser,setAuth}) => {
+export const Login = (  ) => {
   let navigate = useNavigate();
+  const dispatch = useDispatch();
+  const {isAuth} = useSelector((state)=>state.user)
 
-    const responseGoogle = (respuesta) => {
-      if(respuesta.lenght !==0){
-        setAuth(true)
-        setUser(respuesta)
-        navigate('/dashboard')
-      }
-      
-      };
+  
+  const responseGoogle = (respuesta) => {
+    if (respuesta.lenght !== 0) {
+      dispatch(SIGN_IN(respuesta));
+      navigate("/dashboard");
+    }
+  };
   return (
     <>
       {" "}

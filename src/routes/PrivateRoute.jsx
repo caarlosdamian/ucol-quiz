@@ -1,7 +1,20 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
+import { useSelector } from 'react-redux';
+import { Navigate, Route } from 'react-router-dom'
+import { routes } from '.';
 
-export const PrivateRoute = ({children,auth}) => {
- 
-    return auth ? children : <Navigate to="/" />;
+ const PrivateRoute = ({children}) => {
+    const {isAuth} = useSelector((state)=>state.user)
+    return isAuth ? children : <Navigate to="/" />;
 }
+
+const PrivateRoutes = routes.map(({ path, component, id }) => (
+    <Route
+      exact
+      path={path}
+      element={<PrivateRoute>{component}</PrivateRoute>}
+      key={id}
+    />
+  ));
+
+  export default PrivateRoutes
