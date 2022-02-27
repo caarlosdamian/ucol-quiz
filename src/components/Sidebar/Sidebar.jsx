@@ -19,6 +19,7 @@ const Sidebar = () => {
         <Link to="/dashboard" className="links">
           <h1 className="sidebar-header">Ucol Quiz</h1>
         </Link>
+
       </div>
       <div className="sidebar-bottom">
         <div className="sidebar-bottom-list">
@@ -32,6 +33,7 @@ const Sidebar = () => {
             <Link to="/questionnaires" className="links">
               <li>Questionaries</li>
             </Link>
+
 
           </ul>
         </div>
