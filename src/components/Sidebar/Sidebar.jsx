@@ -16,14 +16,23 @@ const Sidebar = () => {
   return (
     <div className="sidebar-container">
       <div className="sidebar-top">
-        <h1 className="sidebar-header">Ucol Quiz</h1>
+        <Link to="/dashboard" className="links">
+          <h1 className="sidebar-header">Ucol Quiz</h1>
+        </Link>
       </div>
       <div className="sidebar-bottom">
         <div className="sidebar-bottom-list">
           <ul className="sidebar-list">
-            <Link  to='/questionnaires'className="link-list-item">
-              Questionaries
+            <Link to="/questionnaires" className="links">
+              <li>Questionaries</li>
             </Link>
+            <Link to="/questionnaires" className="links">
+              <li>Questionaries</li>
+            </Link>
+            <Link to="/questionnaires" className="links">
+              <li>Questionaries</li>
+            </Link>
+
           </ul>
         </div>
         <div className="sidebar-bottom-buttom">
