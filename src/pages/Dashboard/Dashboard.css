@@ -9,10 +9,6 @@
   height: 100vh;
 }
 
-.left {
-  width: 350px;
-  height: 100vh;
-}
 .right {
   display: flex;
   flex-direction: column;
